@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>SAPA Project - Feri Azhari</title>
+  <meta name="description" content="Case Study: SAPA - Satu Page Aja (Link in Bio SaaS)">
+  
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <h1 class="sitename"><b>Feri Azhari</b></h1>
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#resume">Resume</a></li>
+          <li><a href="index.html#portfolio" class="active">Portfolio</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+      <div class="header-social-links">
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        <a href="#" class="github"><i class="bi bi-github"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <div class="project-hero">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8" data-aos="fade-right">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb mb-3">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="index.html#portfolio">Category</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Web Application</li>
+              </ol>
+            </nav>
+            <h1>SAPA - Link in Bio SaaS</h1>
+            <p class="lead text-muted">A lightweight, fast, and aesthetic Link-in-Bio platform powered by Vanilla JS & Supabase.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="portfolio-details" class="portfolio-details section pt-5">
+      <div class="container" data-aos="fade-up">
+        <div class="row g-5">
+          
+          <div class="col-lg-8">
+            
+            <div class="browser-frame mb-5">
+              <div class="browser-header">
+                <div class="browser-dot red"></div>
+                <div class="browser-dot yellow"></div>
+                <div class="browser-dot green"></div>
+              </div>
+              <div class="portfolio-details-slider swiper init-swiper">
+                <script type="application/json" class="swiper-config">
+                  {
+                    "loop": true, "speed": 800, "autoplay": { "delay": 4000 }, "slidesPerView": "auto",
+                    "effect": "fade", "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true }
+                  }
+                </script>
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><img src="assets/img/portfolio/EDSA/1.png" alt="SAPA Dashboard"></div>
+                  <div class="swiper-slide"><img src="assets/img/portfolio/EDSA/Screenshot 2025-12-30 224824.png" alt="SAPA Profile Page"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+
+            <div class="content-area">
+              <h2>The Challenge</h2>
+              <p>Many "Link in Bio" tools are bloated, slow, or restrictive with their free plans. I wanted to create a <strong>Mini SaaS</strong> solution that is lightweight, performs exceptionally fast on mobile devices, and offers premium features like music embedding and custom backgrounds without relying on heavy frontend frameworks.</p>
+              
+              <h2>The Solution</h2>
+              <p>SAPA (Satu Page Aja) was built using <strong>Vanilla JavaScript</strong> to ensure maximum performance and zero bloatware. It utilizes <strong>Supabase</strong> for secure authentication and real-time database management. The platform features a drag-and-drop interface for link management and instant live previews.</p>
+
+              <div class="row g-4 mt-2">
+                <div class="col-md-6">
+                  <div class="feature-item">
+                    <div class="feature-icon"><i class="bi bi-shield-lock-fill"></i></div>
+                    <h5 class="fw-bold">Secure Auth</h5>
+                    <p class="small text-muted mb-0">Powered by Supabase Authentication for secure login and registration.</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="feature-item">
+                    <div class="feature-icon"><i class="bi bi-hand-index-thumb-fill"></i></div>
+                    <h5 class="fw-bold">Drag & Drop</h5>
+                    <p class="small text-muted mb-0">Intuitive link management system using SortableJS library.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mobile-wrapper" data-aos="zoom-in" data-aos-delay="200">
+              <h4 class="mb-4 fw-bold">Mobile Optimized Profile</h4>
+              <img src="assets/img/portfolio/EDSA/mobile.png" alt="Mobile Responsive Mockup" class="img-fluid mobile-mockup">
+            </div>
+
+          </div>
+
+          <div class="col-lg-4">
+            <div class="info-card" data-aos="fade-left" data-aos-delay="100">
+              <h3 class="mb-4 fw-bold h4">Project Overview</h3>
+              <ul class="list-unstyled mb-4">
+                <li class="mb-3"><span class="info-label">Category</span><span class="info-value mb-0">Web App / SaaS</span></li>
+                <li class="mb-3"><span class="info-label">Client</span><span class="info-value mb-0">Personal Project</span></li>
+                <li class="mb-3"><span class="info-label">Role</span><span class="info-value mb-0">Full Stack Developer</span></li>
+                <li class="mb-3"><span class="info-label">Year</span><span class="info-value mb-0">2026</span></li>
+                <li class="mb-3"><span class="info-label">Status</span><span class="info-value mb-0 text-success">Live / Active</span></li>
+              </ul>
+              
+              <div class="text-center mb-4">
+                <a href="https://sapain.my.id" target="_blank" class="btn-live">
+                  Visit Live App <i class="bi bi-box-arrow-up-right"></i>
+                </a>
+              </div>
+              
+              <hr class="my-4 opacity-25">
+
+              <h3 class="mb-3 h6 fw-bold text-uppercase text-muted">Tech Stack</h3>
+              <div class="project-tech-stack">
+                <span class="tech-pill">HTML5 & CSS3</span>
+                <span class="tech-pill">Vanilla JS (ES6)</span>
+                <span class="tech-pill">Supabase</span>
+                <span class="tech-pill">SortableJS</span>
+                <span class="tech-pill">Vercel</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer">
+    <div class="container text-center">
+      <div class="copyright">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Feri Azhari</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center mt-3">
+        <a href=""><i class="bi bi-facebook"></i></a>
+        <a href=""><i class="bi bi-linkedin"></i></a>
+        <a href=""><i class="bi bi-github"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,16 +1,6 @@
-/**
-* Template Name: EasyFolio
-* Template URL: https://bootstrapmade.com/easyfolio-bootstrap-portfolio-template/
-* Updated: Feb 21 2025 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
-/*--------------------------------------------------------------
-# Font & Color Variables
-# Help: https://bootstrapmade.com/color-system/
+/*----------------------------------------------------------------
+# Fonts
 --------------------------------------------------------------*/
-/* Fonts */
 :root {
   --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "Questrial",  sans-serif;
@@ -2243,7 +2233,6 @@ section,
 /*--------------------------------------------------------------
 # Sertifikat
 --------------------------------------------------------------*/
-/* --- Tombol Sertifikat Keren --- */
 .btn-cert {
   display: inline-flex;
   align-items: center;
@@ -2275,3 +2264,260 @@ section,
 .btn-cert:hover i {
   transform: scale(1.1); /* Ikon membesar sedikit saat hover */
 }
+
+/*--------------------------------------------------------------
+# Portofolio
+--------------------------------------------------------------*/
+:root {
+      /* Menggunakan Font Modern untuk bagian Konten Proyek */
+      --font-premium: 'Plus Jakarta Sans', sans-serif;
+      --color-primary: #ff5722; 
+      --color-dark: #0b0f19;
+      --glass-bg: rgba(255, 255, 255, 0.85);
+      --glass-border: 1px solid rgba(255, 255, 255, 0.6);
+      --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+    }
+
+    /* Pastikan Header Asli Tetap Aman */
+    .header { font-family: var(--default-font); } 
+
+    /* Styling Khusus Konten Proyek */
+    .project-content-wrapper {
+      font-family: var(--font-premium);
+      background-color: #fcfcfc;
+      color: #444;
+    }
+
+    /* Hero Section yang Lebih Fresh */
+    .project-hero {
+      background: linear-gradient(135deg, #fff0ea 0%, #ffffff 100%);
+      padding: 60px 0 40px;
+      border-bottom: 1px solid rgba(0,0,0,0.03);
+      position: relative;
+      overflow: hidden;
+      margin-top: -20px; /* Kompensasi padding section default */
+    }
+    
+    .project-hero::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255,87,34,0.04) 0%, rgba(255,255,255,0) 70%);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .mobile-mockup {
+      max-height: 500px; /* Batasi tinggi mockup HP agar tidak terlalu besar */
+      width: auto;
+      margin: 0 auto;
+      display: block;
+      border: 8px solid #1a1a1a; /* Frame HP sederhana */
+      border-radius: 30px;
+    }
+
+    .project-tech-stack span {
+      background: #fff;
+      color: #333;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: inline-block;
+      margin: 0 8px 10px 0;
+      border: 1px solid #e0e0e0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+    .project-tech-stack span:hover {
+      border-color: #e87532;
+      color: #e87532;
+      transform: translateY(-2px);
+    }
+    
+
+    .project-hero h1 {
+      font-weight: 800;
+      font-size: 2.8rem;
+      color: var(--color-dark);
+      letter-spacing: -1px;
+      margin-bottom: 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    /* Browser Frame Effect */
+    .browser-frame {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.05);
+      position: relative;
+    }
+    
+    .browser-header {
+      height: 36px;
+      background: #f1f3f5;
+      border-bottom: 1px solid #e9ecef;
+      display: flex;
+      align-items: center;
+      padding-left: 15px;
+      gap: 6px;
+    }
+    
+    .browser-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .browser-dot.red { background-color: #ff5f56; }
+    .browser-dot.yellow { background-color: #ffbd2e; }
+    .browser-dot.green { background-color: #27c93f; }
+
+    .portfolio-details-slider .swiper-slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Glassy Sticky Card */
+    .info-card {
+      position: sticky;
+      top: 120px; /* Disesuaikan agar tidak tertutup header sticky */
+      background: var(--glass-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: var(--glass-border);
+      box-shadow: var(--glass-shadow);
+      border-radius: 16px;
+      padding: 30px;
+    }
+
+    .info-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #999;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 5px;
+    }
+    
+    .info-value {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-dark);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .tech-pill {
+      display: inline-block;
+      padding: 6px 12px;
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #555;
+      margin: 0 5px 8px 0;
+      transition: 0.2s;
+    }
+    .tech-pill:hover {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+      background: #fff5f0;
+    }
+
+    .btn-live {
+      width: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 14px;
+      background: var(--color-dark);
+      color: #fff;
+      font-weight: 600;
+      border-radius: 30px;
+      transition: all 0.3s;
+      border: none;
+      text-decoration: none;
+      gap: 10px;
+    }
+    .btn-live:hover {
+      background: #0f2943;
+      color: #0f2943;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(255, 87, 34, 0.25);
+    }
+
+    /* Content Styling */
+    .content-area h2 {
+      font-weight: 700;
+      color: var(--color-dark);
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+    
+    .content-area p {
+      line-height: 1.8;
+      color: #555;
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Feature Grid */
+    .feature-item {
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid #eee;
+      transition: 0.3s;
+      height: 100%;
+    }
+    .feature-item:hover {
+      border-color: rgba(255, 87, 34, 0.3);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+      transform: translateY(-5px);
+    }
+    .feature-icon {
+      width: 40px;
+      height: 40px;
+      background: #fff0ea;
+      color: var(--color-primary);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+
+    /* Mobile Section */
+    .mobile-teaser {
+      background: #e87532;
+      border-radius: 20px;
+      padding: 40px;
+      color: #fff;
+      margin-top: 50px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mobile-wrapper {
+      background: #fafafa;
+      border-radius: 20px;
+      padding: 40px;
+      margin-top: 40px;
+      text-align: center;
+      border: 1px solid #eee;
+    }
+    .mobile-mockup {
+      max-height: 500px;
+      width: auto;
+      margin: 0 auto;
+      display: block;
+      border: 8px solid #1a1a1a;
+      border-radius: 30px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    }
