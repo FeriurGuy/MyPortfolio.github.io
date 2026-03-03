@@ -1,0 +1,63 @@
+/* Body & Scrollbar */
+body { 
+  background-color: #16191b; 
+  color: #e2e8f0; 
+  overflow-x: hidden; 
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #16191b; }
+::-webkit-scrollbar-thumb { background: #282d31; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #00f6a1; }
+
+/* Custom Components */
+.glass-nav { 
+  background: rgba(22, 25, 27, 0.85); 
+  backdrop-filter: blur(12px); 
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.bento-card { 
+  background-color: #282d31; 
+  border: 1px solid rgba(255, 255, 255, 0.05); 
+  border-radius: 1.5rem; 
+  transition: all 0.3s ease; 
+}
+
+.bento-card:hover { 
+  border-color: rgba(0, 246, 161, 0.3); 
+  transform: translateY(-4px);
+}
+
+/* Timeline Custom Dot */
+.timeline-dot::before {
+  content: ''; 
+  position: absolute; 
+  left: -38px; 
+  top: 6px; 
+  width: 12px; 
+  height: 12px;
+  background-color: #00f6a1; 
+  border-radius: 50%; 
+  box-shadow: 0 0 10px rgba(0, 246, 161, 0.5);
+}
+
+/* Progress Bar Fill */
+.skill-level-fill {
+  background: linear-gradient(90deg, var(--mint), var(--mintHover)); /* Fallback kalau pakai native css, tapi Tailwind class handle gradasinya */
+  border-radius: 2px;
+  position: relative;
+  animation: fillLevel 2s ease-out;
+}
+
+@keyframes fillLevel {
+  0% { width: 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-float-icon {
+  animation: float 3s ease-in-out infinite;
+}
