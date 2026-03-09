@@ -42,9 +42,9 @@ body {
   box-shadow: 0 0 10px rgba(0, 246, 161, 0.5);
 }
 
-/* Progress Bar Fill */
+/* Progress Bar Fill (BIAR SKILL BAR AMAN) */
 .skill-level-fill {
-  background: linear-gradient(90deg, var(--mint), var(--mintHover)); /* Fallback kalau pakai native css, tapi Tailwind class handle gradasinya */
+  background: linear-gradient(90deg, #00f6a1, #00d48a); 
   border-radius: 2px;
   position: relative;
   animation: fillLevel 2s ease-out;
@@ -54,10 +54,120 @@ body {
   0% { width: 0; }
 }
 
+/* Icon Float Animation (BIAR AMAN) */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
 .animate-float-icon {
   animation: float 3s ease-in-out infinite;
+}
+
+/* ========================================= */
+/* Certificate Button Interaction (Large)    */
+/* ========================================= */
+.certificate-btn {
+  position: relative;
+  overflow: hidden;
+  z-index: 1; /* Pastikan teks tetap di atas efek kilatan */
+}
+
+.certificate-btn:hover {
+  box-shadow: 0 0 15px rgba(0, 246, 161, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Efek Shine (Kilatan Cahaya lewat) pas di hover untuk tombol besar */
+.certificate-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.4), /* Cahaya putih transparan */
+    transparent
+  );
+  transition: all 0.5s ease;
+  z-index: -1; /* Biar cahayanya lewat di belakang teks/icon */
+}
+
+.certificate-btn:hover::before {
+  left: 100%;
+}
+
+/* ========================================= */
+/* Small Certificate Button Custom Style     */
+/* ========================================= */
+.certificate-btn-sm {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 1rem;
+  font-size: 0.75rem; /* Setara text-xs */
+  font-weight: 700;
+  color: #00f6a1; /* Warna mint */
+  background-color: rgba(0, 246, 161, 0.05); /* Mint transparan */
+  border: 1px solid rgba(0, 246, 161, 0.2);
+  border-radius: 0.4rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  width: fit-content;
+}
+
+/* Hover: Ganti warna BG, teks jadi gelap, tombol naik dikit + shadow */
+.certificate-btn-sm:hover {
+  background-color: #00f6a1;
+  color: #16191b;
+  box-shadow: 0 4px 15px rgba(0, 246, 161, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Animasi untuk icon mata */
+.certificate-btn-sm i {
+  transition: transform 0.3s ease;
+}
+
+.certificate-btn-sm:hover i {
+  transform: scale(1.2); /* Icon sedikit membesar */
+}
+
+/* Efek Shine (Kilatan Cahaya lewat) pas di hover untuk tombol kecil */
+.certificate-btn-sm::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: all 0.5s ease;
+  z-index: -1;
+}
+
+.certificate-btn-sm:hover::before {
+  left: 100%;
+}
+
+/* Penyesuaian list item agar lebih smooth */
+li.group:hover {
+  transform: translateX(5px);
+}
+
+@media (max-width: 639px) {
+  .certificate-btn-sm {
+    align-self: center; /* Memaksa tombol ke posisi tengah */
+    margin-top: 0.7rem; /* Menambahkan jarak/padding sedikit di bagian atas */
+  }
 }

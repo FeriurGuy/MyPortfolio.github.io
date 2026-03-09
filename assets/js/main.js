@@ -23,10 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 3. Active Navbar on Scroll Logic
   const sections = document.querySelectorAll("section");
-  // Ambil semua link menu kecuali tombol "Let's Talk" (biar style tombol kontak ngga keganggu)
   const navLinks = document.querySelectorAll('header nav ul li a[href^="#"]:not([href="#contact"]), #mobile-menu ul li a[href^="#"]:not([href="#contact"])');
-
-  // Settingan sensor layar (mendeteksi section pas posisinya ada di tengah layar)
   const observerOptions = {
     root: null,
     rootMargin: "-50% 0px -50% 0px", 
