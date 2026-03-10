@@ -1,183 +1,208 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>EDSA Website Project - Feri Azhari</title>
-  <meta name="description" content="Professional Case Study: EDSA UIN Ar-Raniry Website Revamp">
+  <title>SAPA Project | Feri Azhari - Techy Portfolio Detail</title>
+  <meta name="description" content="Case study of SAPA, a custom Link-in-Bio platform built with Vanilla JS and Supabase.">
   
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  
+  <link rel="stylesheet" href="assets/css/style.css">
 
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <link href="assets/css/main.css" rel="stylesheet">
-
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            mint: '#00f6a1',
+            mintHover: '#00d48a',
+            charcoal: '#282d31',
+            dark: '#16191b',
+            deepDark: '#0f1113',
+            lightGray: '#a0aec0',
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          boxShadow: {
+            'neon': '0 0 15px rgba(0, 246, 161, 0.2)',
+            'neon-strong': '0 0 25px rgba(0, 246, 161, 0.3)',
+          },
+          animation: {
+            'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          }
+        }
+      }
+    }
+  </script>
 </head>
 
-<body class="portfolio-details-page">
+<body class="antialiased bg-dark text-white selection:bg-mint selection:text-dark">
 
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <h1 class="sitename"><b>Feri Azhari</b></h1>
+  <header class="fixed top-0 w-full z-50 py-4 bg-dark/80 backdrop-blur-md border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center relative">
+      <a href="index.html" class="text-2xl font-heading font-bold text-white tracking-wide">
+        Feri<span class="text-mint">.</span>
       </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html#hero">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#resume">Resume</a></li>
-          <li><a href="index.html#portfolio" class="active">Portfolio</a></li>
-          <li><a href="index.html#services">Services</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
+      
+      <nav class="hidden lg:block">
+        <ul class="flex gap-8 text-sm font-medium text-lightGray">
+          <li><a href="index.html#hero" class="hover:text-mint transition">Home</a></li>
+          <li><a href="index.html#portfolio" class="text-mint transition">Portfolio</a></li>
+          <li><a href="index.html#services" class="hover:text-mint transition">Services</a></li>
         </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
-      <div class="header-social-links">
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-        <a href="#" class="github"><i class="bi bi-github"></i></a>
-        <a href="#" class="github"><i class="bi bi-github"></i></a>
-      </div>
-
+      
+      <a href="index.html#contact" class="hidden lg:inline-block px-5 py-2 bg-mint text-dark font-bold rounded-full hover:shadow-neon transition-all">Let's Talk</a>
     </div>
   </header>
 
-  <main class="main">
+  <main class="pt-24 pb-20">
 
-    <div class="page-title light-background">
-      <div class="page-title">
-        <div class="breadcrumbs">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="index.html"><i class="bi bi-house"></i> Home</a></li>
-              <li class="breadcrumb-item"><a href="index.html#portfolio">Category</a></li>
-              <li class="breadcrumb-item active current">SAPA.</li>
-            </ol>
-          </nav>
-        </div>
+    <section class="relative py-16 bg-charcoal/20 border-b border-white/5 overflow-hidden">
+      <div class="absolute inset-0 bg-mint/5"></div>
+        <div class="max-w-7xl mx-auto px-6 relative flex justify-between items-end gap-6" data-aos="fade-up">
+        
+          <div>
+            <nav class="flex text-lightGray text-xs mb-5 font-medium tracking-wide">
+              <ol class="flex items-center space-x-2">
+                <li><a href="index.html" class="hover:text-mint transition"><i class="bi bi-house"></i> HOME</a></li>
+                <li><span class="mx-2 text-white/20">/</span></li>
+                <li><a href="index.html#portfolio" class="hover:text-mint transition">PORTFOLIO</a></li>
+                <li><span class="mx-2 text-white/20">/</span></li>
+                <li class="text-mint">SAPA.</li>
+              </ol>
+            </nav>
 
-        <div class="title-wrapper">
-          <h1>SAPA.</h1>
-          <p>A lightweight, fast, and aesthetic Link-in-Bio platform powered by Vanilla JS & Supabase.</p>
-        </div>
-      </div>
-    </div>
+            <h1 class="text-4xl md:text-5xl font-heading font-bold text-white mb-1">SAPA<span class="text-mint">.</span></h1>
+            <h4 class="text-xl md:text-2xl font-heading font-medium text-lightGray mb-0">Satu Page Aja</h4>
+          </div>
 
-    <section id="portfolio-details" class="portfolio-details section pt-5">
-      <div class="container" data-aos="fade-up">
+          <div class="hidden md:flex items-center justify-center pb-2 pr-6">
+            <div class="relative w-28 h-28 flex items-center justify-center group">
+              
+              <div class="absolute inset-0 rounded-full bg-mint/20 animate-ping group-hover:bg-mint/30 transition-colors duration-500" style="animation-duration: 3s;"></div>
 
-        <div class="row g-5">
+              <svg class="absolute inset-0 w-full h-full text-mint/30 animate-[spin_20s_linear_infinite] group-hover:text-mint/60 transition-colors duration-500" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="48" fill="none" stroke="currentColor" stroke-width="0.75" stroke-dasharray="2 6" />
+              </svg>
+
+              <svg class="absolute inset-0 w-full h-full text-mint animate-[spin_5s_linear_infinite]" viewBox="0 0 100 100">
+                <circle cx="50" cy="2" r="2.5" fill="currentColor" class="shadow-neon-strong" />
+                <circle cx="50" cy="98" r="1.5" fill="currentColor" class="shadow-neon opacity-50" />
+              </svg>
+
+              <svg class="absolute inset-0 w-full h-full text-mint/50 animate-[spin_12s_linear_infinite_reverse] group-hover:text-mint transition-colors duration-500" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="40 20 10 20" stroke-linecap="round" />
+              </svg>
+
+              <svg class="absolute w-16 h-16 text-mint animate-[spin_8s_linear_infinite] group-hover:scale-110 transition-transform duration-500" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+                <polygon points="50,4 89.8,27 89.8,73 50,96 10.2,73 10.2,27" stroke-width="1.2" stroke-linejoin="round" />
+                <line x1="50" y1="4" x2="50" y2="96" stroke-width="0.5" opacity="0.4" />
+                <line x1="10.2" y1="27" x2="89.8" y2="73" stroke-width="0.5" opacity="0.4" />
+                <line x1="10.2" y1="73" x2="89.8" y2="27" stroke-width="0.5" opacity="0.4" />
+                <circle cx="50" cy="50" r="12" stroke-width="1" stroke-dasharray="3 3" opacity="0.6"/>
+              </svg>
+
+              <div class="absolute w-3 h-3 bg-white rounded-full shadow-neon-strong animate-pulse group-hover:scale-[2] group-hover:bg-mint transition-all duration-300"></div>
+              
+            </div>
+          </div>
+
+        </div>  
+    </section>
+
+    <section class="py-16 md:py-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           
-          <div class="col-lg-8">
+          <div class="lg:col-span-8 space-y-16" data-aos="fade-up">
             
-            <div class="browser-frame mb-5">
-              <div class="browser-header">
-                <div class="browser-dot red"></div>
-                <div class="browser-dot yellow"></div>
-                <div class="browser-dot green"></div>
+            <div class="bento-card border border-white/10 rounded-2xl p-2 relative shadow-2xl overflow-hidden group">
+              <div class="bg-deepDark/80 px-4 py-3 border-b border-white/5 flex gap-1.5 items-center relative z-10">
+                <div class="w-2.5 h-2.5 rounded-full bg-red-500 opacity-80"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-yellow-500 opacity-80"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-green-500 opacity-80"></div>
+                <div class="flex-grow text-center text-[10px] text-white/30 font-mono tracking-wider">sapain.my.id</div>
               </div>
               
-              <div class="portfolio-details-slider swiper init-swiper">
-                <script type="application/json" class="swiper-config">
-                  {
-                    "loop": true,
-                    "speed": 800,
-                    "autoplay": { "delay": 4000 },
-                    "slidesPerView": "auto",
-                    "effect": "fade",
-                    "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true }
-                  }
-                </script>
+              <div class="swiper portfolio-slider">
                 <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <img src="assets/img/portfolio/SAPA/5.png" alt="Desktop Homepage">
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="assets/img/portfolio/SAPA/6.png" alt="Gallery Section">
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="assets/img/portfolio/SAPA/7.png" alt="Gallery Section">
-                  </div>
+                  <div class="swiper-slide"><img src="assets/img/portfolio/SAPA/5.png" alt="SAPA Homepage" class="w-full h-auto object-cover rounded-b-xl grayscale group-hover:grayscale-0 transition duration-700"></div>
+                  <div class="swiper-slide"><img src="assets/img/portfolio/SAPA/6.png" alt="SAPA Dashboard" class="w-full h-auto object-cover rounded-b-xl grayscale group-hover:grayscale-0 transition duration-700"></div>
+                  <div class="swiper-slide"><img src="assets/img/portfolio/SAPA/7.png" alt="SAPA Analytics" class="w-full h-auto object-cover rounded-b-xl grayscale group-hover:grayscale-0 transition duration-700"></div>
                 </div>
                 <div class="swiper-pagination"></div>
               </div>
             </div>
 
-            <div class="portfolio-description">
-              <h2>The Challenge</h2>
-              <p>
-                Many "Link in Bio" tools are bloated, slow, or restrictive with their free plans. I wanted to create a <strong>Mini SaaS</strong> solution that is lightweight, performs exceptionally fast on mobile devices, and offers premium features like music embedding and custom backgrounds without relying on heavy frontend frameworks.
+            <div class="bento-card p-8 lg:p-10 border border-white/10 rounded-2xl bg-charcoal/30">
+              <h2 class="text-3xl font-bold text-white mb-6 tracking-tight">Project Context <span class="text-mint">&</span> Impact</h2>
+              <p class="text-lightGray leading-relaxed mb-8">
+                The modern digital creator needs a lightning-fast, highly adaptable home for all their content. I developed SAPA as a bespoke solution, bypassing common platforms to eliminate monthly fees while providing premium features. The core philosophy was centered on extreme performance and unparalleled customization.
               </p>
               
-              <h2>The Solution</h2>
-              <p>SAPA (Satu Page Aja) was built using <strong>Vanilla JavaScript</strong> to ensure maximum performance and zero bloatware. It utilizes <strong>Supabase</strong> for secure authentication and real-time database management. The platform features a drag-and-drop interface for link management and instant live previews.</p>
-
-              <div class="row g-4 mt-2">
-                <div class="col-md-6">
-                  <div class="feature-item">
-                    <div class="feature-icon"><i class="bi bi-shield-lock-fill"></i></div>
-                    <h5 class="fw-bold">Secure Auth</h5>
-                    <p class="small text-muted mb-0">Powered by Supabase Authentication for secure login and registration.</p>
-                  </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6">
+                <div class="p-6 border border-white/10 rounded-xl bg-deepDark hover:border-mint/50 hover:shadow-neon transition-all duration-300 group">
+                  <div class="w-14 h-14 bg-mint/5 text-mint rounded-lg flex items-center justify-center text-3xl mb-5 group-hover:scale-110 group-hover:text-mintHover transition"><i class="bi bi-shield-lock"></i></div>
+                  <h4 class="text-lg font-bold text-white mb-1.5">User Empowerment</h4>
+                  <p class="text-sm text-gray-400">Complete control over branding and content without restrictive third-party rules.</p>
                 </div>
-                <div class="col-md-6">
-                  <div class="feature-item">
-                    <div class="feature-icon"><i class="bi bi-hand-index-thumb-fill"></i></div>
-                    <h5 class="fw-bold">Drag & Drop</h5>
-                    <p class="small text-muted mb-0">Intuitive link management system using SortableJS library.</p>
-                  </div>
+                
+                <div class="p-6 border border-white/10 rounded-xl bg-deepDark hover:border-mint/50 hover:shadow-neon transition-all duration-300 group">
+                  <div class="w-14 h-14 bg-mint/5 text-mint rounded-lg flex items-center justify-center text-3xl mb-5 group-hover:scale-110 group-hover:text-mintHover transition"><i class="bi bi-phone-flip"></i></div>
+                  <h4 class="text-lg font-bold text-white mb-1.5">Unmatched Speed</h4>
+                  <p class="text-sm text-gray-400">A simplified stack ensures near-instant load times on mobile devices.</p>
                 </div>
               </div>
             </div>
 
           </div>
 
-          <div class="col-lg-4">
-            <div class="portfolio-info shadow-sm p-4 rounded-4 bg-white" data-aos="fade-left" data-aos-delay="100">
-              <h3 class="mb-4">Project Overview</h3>
-              <ul class="list-unstyled mb-4">
-                <li class="mb-2"><strong>Category:</strong> Web App / SaaS</li>
-                <li class="mb-2"><strong>Client:</strong> Personal Project</li>
-                <li class="mb-2"><strong>Focus:</strong> Modern Design, Interactivity, Responsive</li>
-                <li class="mb-2"><strong>Role:</strong> Fullstack Development</li>
-                <li class="mb-2"><strong>Status:</strong> Live / Active</li>
+          <div class="lg:col-span-4 space-y-10">
+            
+            <div class="bento-card p-8 border border-white/10 rounded-2xl shadow-xl bg-charcoal/50 sticky top-28" data-aos="fade-left" data-aos-delay="100">
+              <h3 class="text-2xl font-bold text-white mb-6 border-b border-white/10 pb-4 tracking-tight">Project Summary</h3>
+              <ul class="space-y-4 text-sm mb-10 text-lightGray">
+                <li class="flex justify-between border-b border-white/5 pb-2"><strong class="text-white">Role</strong> Fullstack Developer</li>
+                <li class="flex justify-between border-b border-white/5 pb-2"><strong class="text-white">Tech</strong> Vanilla JS, Supabase</li>
+                <li class="flex justify-between border-b border-white/5 pb-2"><strong class="text-white">Client</strong> Personal Project</li>
+                <li class="flex justify-between pb-2"><strong class="text-white">Status</strong> <span class="flex items-center gap-1.5 text-mint font-bold"><span class="w-2 h-2 rounded-full bg-mint animate-pulse-fast"></span> Live</span></li>
               </ul>
-              <div class="text-center mb-4">
-                <a href="https://sapain.my.id" target="_blank" class="btn-visit w-100">
-                  Visit Live Website <i class="bi bi-box-arrow-up-right ms-2"></i>
-                </a>
-              </div>
               
-              <hr>
-
-              <h3 class="mb-4">Infrastructure & Tools</h3>
-              <div class="project-tech-stack">
-                <span class="tech-pill">HTML5 & CSS3</span>
-                <span class="tech-pill">Vanilla JS (ES6)</span>
-                <span class="tech-pill">Supabase</span>
-                <span class="tech-pill">SortableJS</span>
-                <span class="tech-pill">Vercel</span>
+              <a href="https://sapain.my.id" target="_blank" class="flex items-center justify-center gap-2.5 w-full py-4 bg-mint text-dark font-bold rounded-xl hover:bg-mintHover hover:shadow-neon-strong transition-all transform hover:-translate-y-1">
+                View Live Website <i class="bi bi-box-arrow-up-right"></i>
+              </a>
+              
+              <h3 class="text-xl font-bold text-white mb-5 mt-10 border-b border-white/10 pb-4 tracking-tight">Key Technologies</h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="font-mono text-[10px] px-3 py-1.5 bg-mint/10 text-mint rounded border border-mint/20">HTML5</span>
+                <span class="font-mono text-[10px] px-3 py-1.5 bg-mint/10 text-mint rounded border border-mint/20">CSS3</span>
+                <span class="font-mono text-[10px] px-3 py-1.5 bg-mint/10 text-mint rounded border border-mint/20">VANILLA JS</span>
+                <span class="font-mono text-[10px] px-3 py-1.5 bg-mint/10 text-mint rounded border border-mint/20">SUPABASE</span>
+                <span class="font-mono text-[10px] px-3 py-1.5 bg-mint/10 text-mint rounded border border-mint/20">VERCEL</span>
               </div>
-
             </div>
 
-            <div class="mobile-wrapper shadow-sm p-4 rounded-4 bg-white w-40" data-aos="zoom-in" data-aos-delay="200">
-              <h4 class="mb-4 fw-bold">Mobile Optimized View</h4>
-              <img src="assets/img/portfolio/EDSA/mobile.png" alt="Mobile Responsive Mockup" class="img-fluid mobile-mockup">
+            <div class="bento-card p-8 border border-white/10 rounded-2xl shadow-xl bg-deepDark text-center" data-aos="fade-left" data-aos-delay="200">
+              <h4 class="text-lg font-semibold text-white/70 mb-6 font-mono tracking-widest uppercase">Mobile First View</h4>
+              <div class="inline-block rounded-3xl border-4 border-charcoal overflow-hidden shadow-neon-strong relative transform rotate-1 group hover:rotate-0 transition-transform duration-300">
+                <img src="assets/img/portfolio/EDSA/mobile.png" alt="Mobile View Mockup" class="w-full h-auto max-w-[180px] object-cover rounded-2xl group-hover:scale-105 transition-transform duration-700">
+              </div>
             </div>
+
           </div>
 
         </div>
@@ -186,31 +211,49 @@
 
   </main>
 
-  <footer id="footer" class="footer">
-    <div class="container text-center">
-      <div class="copyright">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">Feri Azhari</strong> <span>All Rights Reserved</span></p>
-      </div>
-      <div class="social-links d-flex justify-content-center mt-3">
-        <a href=""><i class="bi bi-twitter-x"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
+  <footer class="py-10 text-center border-t border-white/5 bg-deepDark">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="text-lightGray mb-5 text-sm md:text-base font-light">© 2025 <strong class="text-white">Feri Azhari</strong>. All Rights Reserved.</p>
+      <div class="flex justify-center gap-5 text-lg md:text-xl text-lightGray">
+        <a href="#" class="hover:text-mint transition"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="hover:text-mint transition"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="hover:text-mint transition"><i class="bi bi-linkedin"></i></a>
+        <a href="#" class="hover:text-mint transition"><i class="bi bi-github"></i></a>
+        <a href="#" class="hover:text-mint transition"><i class="bi bi-whatsapp"></i></a>
       </div>
     </div>
   </footer>
 
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
 
-</body>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Init AOS Animations
+      AOS.init({
+        duration: 900,
+        easing: 'ease-out-cubic',
+        once: true,
+        mirror: false
+      });
 
+      // Init Swiper Slider for Portfolio Images
+      new Swiper('.portfolio-slider', {
+        loop: true,
+        speed: 700,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'bullets',
+          clickable: true
+        }
+      });
+    });
+  </script>
+
+</body>
 </html>

@@ -1,27 +1,42 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. Initialize AOS Animation
   AOS.init({ 
     duration: 800, 
     once: true, 
     offset: 50 
   });
 
-  // 2. Mobile Menu Toggle Logic
-  const mobileMenuBtn = document.getElementById("mobile-menu-btn");
-  const mobileMenu = document.getElementById("mobile-menu");
-  const mobileLinks = mobileMenu.querySelectorAll("a");
+  const btn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+  const spans = btn.querySelectorAll("span");
+  const mobileLinks = menu.querySelectorAll("a");
 
-  mobileMenuBtn.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-  });
+  const toggleMenu = () => {
+    menu.classList.toggle("opacity-0");
+    menu.classList.toggle("invisible");
+    menu.classList.toggle("-translate-y-4");
+    
+    spans[0].classList.toggle("rotate-45");
+    spans[0].classList.toggle("translate-x-[2px]");
+    spans[0].classList.toggle("-translate-y-[2px]");
+    
+    spans[1].classList.toggle("opacity-0");
+    spans[1].classList.toggle("translate-x-3");
+    
+    spans[2].classList.toggle("-rotate-45");
+    spans[2].classList.toggle("translate-x-[2px]");
+    spans[2].classList.toggle("translate-y-[2px]");
+  };
+
+  btn.addEventListener("click", toggleMenu);
 
   mobileLinks.forEach(link => {
     link.addEventListener("click", () => {
-      mobileMenu.classList.add("hidden");
+      if (!menu.classList.contains("invisible")) {
+        toggleMenu();
+      }
     });
   });
 
-  // 3. Active Navbar on Scroll Logic
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll('header nav ul li a[href^="#"]:not([href="#contact"]), #mobile-menu ul li a[href^="#"]:not([href="#contact"])');
   const observerOptions = {
@@ -33,16 +48,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        // Ambil ID dari section yang lagi dilihat (misal: "about" atau "services")
         const currentId = entry.target.getAttribute("id");
-
         navLinks.forEach(link => {
-          // Hapus efek nyala dari semua link dulu
           link.classList.remove("text-mint", "font-bold");
-          
-          // Cocokin href di link dengan ID section yang lagi aktif
           if (link.getAttribute("href") === `#${currentId}`) {
-            // Kalau cocok, kasih warna mint dan tebelin hurufnya
             link.classList.add("text-mint", "font-bold");
           }
         });
@@ -55,50 +64,41 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// --- Modal Sertifikat Logic ---
-
 function openCertModal(imageSrc, pdfSrc) {
-  const modal = document.getElementById('certModal');
-  const modalImg = document.getElementById('certModalImg');
-  const modalDownload = document.getElementById('certModalDownload');
-  const modalContent = document.getElementById('certModalContent');
+  const modal = document.getElementById("certModal");
+  const modalImg = document.getElementById("certModalImg");
+  const modalDownload = document.getElementById("certModalDownload");
+  const modalContent = document.getElementById("certModalContent");
   
-  // Set source gambar dan link download sesuai yang diklik
   modalImg.src = imageSrc;
   modalDownload.href = pdfSrc;
   
-  // Tampilkan modal (hapus class hidden, ubah jadi flex)
-  modal.classList.remove('hidden');
-  modal.classList.add('flex');
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
   
-  // Kasih jeda sedikit buat trigger animasi transisi Tailwind
   setTimeout(() => {
-    modal.classList.remove('opacity-0');
-    modalContent.classList.remove('scale-95');
-    modalContent.classList.add('scale-100');
+    modal.classList.remove("opacity-0");
+    modalContent.classList.remove("scale-95");
+    modalContent.classList.add("scale-100");
   }, 10);
 }
 
 function closeCertModal() {
-  const modal = document.getElementById('certModal');
-  const modalContent = document.getElementById('certModalContent');
+  const modal = document.getElementById("certModal");
+  const modalContent = document.getElementById("certModalContent");
   
-  // Jalankan animasi keluar dulu
-  modal.classList.add('opacity-0');
-  modalContent.classList.remove('scale-100');
-  modalContent.classList.add('scale-95');
+  modal.classList.add("opacity-0");
+  modalContent.classList.remove("scale-100");
+  modalContent.classList.add("scale-95");
   
-  // Setelah animasi selesai (300ms), baru sembunyikan elemennya
   setTimeout(() => {
-    modal.classList.add('hidden');
-    modal.classList.remove('flex');
-    // Bersihkan src gambar biar memori gak penuh
-    document.getElementById('certModalImg').src = ""; 
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+    document.getElementById("certModalImg").src = ""; 
   }, 300);
 }
 
-// Tutup modal kalau user nge-klik area gelap di luar gambar
-document.getElementById('certModal').addEventListener('click', function(e) {
+document.getElementById("certModal")?.addEventListener("click", function(e) {
   if (e.target === this) {
     closeCertModal();
   }
